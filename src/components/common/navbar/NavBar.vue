@@ -15,6 +15,11 @@ export default {
 <style scoped>
 /* @import url(); 引入css类 */
 .nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
   display: flex;
   height: 44px;
   text-align: center;

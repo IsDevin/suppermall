@@ -18,7 +18,7 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-#### 1.划分目录结构
+### 划分目录结构
 
 D:\myproject\suppermall
 
@@ -37,28 +37,3 @@ D:\myproject\suppermall
 |  |   ├─images `图片`
 |  |   ├─css `css`
 
-#### 2.引用两个公共css文件
-
-normalize.css
-
-base.css
-
-#### 3. 创建 `vue.config.js`文件 和 .editorconfig
-
-```javascript
-module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        'assets': '@/assets',
-        'common': '@/common',
-        'components': '@/components',
-        'network': '@/network',
-        'views': '@/views'
-      }
-    }
-  }
-}
-```
-
-#### 4.项目的模块划分 -> tabbar -> 路由映射关系
