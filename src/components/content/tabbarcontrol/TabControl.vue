@@ -26,6 +26,7 @@ export default {
   methods: {
     controlClick(index) {
       this.currentIndex = index
+      this.$emit('typeClick',index)
     }
   }
 }
