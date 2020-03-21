@@ -30,8 +30,15 @@ export default {
 
   },
   methods: {
-    scrollTo(x,y,time=400) {
-      this.scroll.scrollTo(x,y,time)
+    scrollTo (x,y,time=400) {
+      this.scroll && this.scroll.scrollTo(x,y,time)
+    },
+    finishUpLoad () {
+      this.scroll && this.scroll.finishPullUp()
+    },
+    refresh () {
+      console.log('---');
+      this.scroll && this.scroll.refresh()
     }
   },
   //生命周期 - 挂载完成（访问DOM元素）
@@ -41,11 +48,20 @@ export default {
         click: true,
         probeType: this.probeType,
         pullUpLoad: this.pullUpLoad
-      });
+      })
       
-      this.scroll.on('scroll',(position) => {
-        this.$emit('scrollShow',position)
-      })         
+      if(this.probeType == 2 || this.probeType == 3) {
+          this.scroll.on('scroll',(position) => {
+          this.$emit('scrollShow',position)
+        })
+      }
+
+      if(this.pullUpLoad) {
+        this.scroll.on('pullingUp',() => {
+          this.$emit('pullingUp')
+        })
+      }
+      
   }
 }
 </script>
